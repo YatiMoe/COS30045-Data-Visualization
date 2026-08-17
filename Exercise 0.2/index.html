@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Appliance Energy Consumption</title>
+  <meta name="description" content="Understand how much your household appliances really cost to run in Australia.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topnav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Appliance Energy Consumption — Home">
+        <img src="assets/img/PowerIcon.png" alt="Power logo" class="brand-logo"
+             onerror="this.onerror=null;this.src='assets/img/logo-fallback.svg';">
+        <span class="brand-name">ApplianceWatt</span>
+      </a>
+      <nav class="switch-nav" aria-label="Primary">
+        <a href="index.html" class="switch-link active" aria-current="page">Home<span class="led"></span></a>
+        <a href="televisions.html" class="switch-link">Televisions<span class="led"></span></a>
+        <a href="about.html" class="switch-link">About Us<span class="led"></span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Household energy · Australia</span>
+          <h1>Know what your appliances really cost to run.</h1>
+          <p class="lead">Electricity prices in Australia have climbed steadily over the past decade, and appliances that run quietly in the background, fridges, TVs, standby chargers, often add more to a power bill than people expect. This site walks through where that usage comes from and lets you estimate it for yourself.</p>
+          <a class="btn" href="televisions.html">Try the energy calculator →</a>
+        </div>
+
+        <div class="meter-wrap">
+          <svg class="meter-dial" viewBox="0 0 280 200" role="img" aria-labelledby="meterTitle">
+            <title id="meterTitle">Illustrative power meter dial</title>
+            <path d="M30 150 A110 110 0 0 1 250 150" fill="none" stroke="#2A3550" stroke-width="10" stroke-linecap="round"/>
+            <path d="M30 150 A110 110 0 0 1 140 40" fill="none" stroke="#3ED6C6" stroke-width="10" stroke-linecap="round" opacity="0.6"/>
+            <path d="M140 40 A110 110 0 0 1 250 150" fill="none" stroke="#FFC63A" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+            <g class="meter-needle">
+              <line x1="140" y1="150" x2="140" y2="55" stroke="#F2F4F8" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="140" cy="150" r="7" fill="#F2F4F8"/>
+            </g>
+            <text x="140" y="128" text-anchor="middle" class="meter-reading">4.2</text>
+            <text x="140" y="148" text-anchor="middle" class="meter-label">kWh / DAY (EXAMPLE)</text>
+          </svg>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">01</span>
+          <h2>Where household energy use comes from</h2>
+        </div>
+        <p>Every appliance draws a certain wattage while running, and some continue to draw a small amount even when switched to standby. Multiplied across hours of use per day and days per year, small differences in wattage turn into noticeable differences on a bill. The figures below are illustrative placeholders, used to demonstrate layout for this exercise rather than official statistics.</p>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="figure">~30<sup>%</sup></span>
+            <p class="caption">Example share of a typical Australian household bill attributed to heating and cooling appliances.</p>
+          </div>
+          <div class="stat-card">
+            <span class="figure">10<sup>W</sup></span>
+            <p class="caption">Example standby draw for a device left plugged in but switched off.</p>
+          </div>
+          <div class="stat-card">
+            <span class="figure">A$0.30<sup>/kWh</sup></span>
+            <p class="caption">Example residential electricity price used throughout this site's calculator.</p>
+          </div>
+        </div>
+        <p class="note-flag mt-lg">Figures above are placeholder examples for demonstration purposes, not verified market data.</p>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">02</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="panel">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+              Why do appliances cost different amounts to run?
+              <span class="plus">+</span>
+            </button>
+            <div class="faq-answer" id="faq1">
+              <p>Cost depends on wattage, how many hours a day the appliance is used, and the price charged per kilowatt-hour by your electricity retailer. A high-wattage appliance used briefly can cost less than a low-wattage appliance left running all day.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+              What is a kilowatt-hour (kWh)?
+              <span class="plus">+</span>
+            </button>
+            <div class="faq-answer" id="faq2">
+              <p>A kilowatt-hour is the unit electricity retailers bill by. It represents one kilowatt of power used continuously for one hour, and is calculated by multiplying an appliance's wattage by the hours it runs, then dividing by 1000.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+              Does standby power really matter?
+              <span class="plus">+</span>
+            </button>
+            <div class="faq-answer" id="faq3">
+              <p>Individually, standby draw is small, but it adds up across every appliance left plugged in around a home, every day of the year. Switching devices off at the wall when not in use is a simple way to reduce it.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+              How accurate is the calculator on this site?
+              <span class="plus">+</span>
+            </button>
+            <div class="faq-answer" id="faq4">
+              <p>The calculator on the Televisions page is a demonstration tool built for this exercise. It gives a reasonable estimate based on the wattage, hours of use, and price you enter, but actual bills depend on your specific plan and tariff.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> [Yati Moe]. Built for COS30045 Exercise 0.2.</p>
+      <p class="genai-note">Generative AI (Claude) was used to help draft and structure parts of this website's code. See README.md for the full reflection.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

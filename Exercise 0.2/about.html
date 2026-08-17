@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Appliance Energy Consumption</title>
+  <meta name="description" content="About this appliance energy consumption website and the COS30045 exercise it was built for.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topnav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Appliance Energy Consumption — Home">
+        <img src="assets/img/PowerIcon.png" alt="Power logo" class="brand-logo"
+             onerror="this.onerror=null;this.src='assets/img/logo-fallback.svg';">
+        <span class="brand-name">ApplianceWatt</span>
+      </a>
+      <nav class="switch-nav" aria-label="Primary">
+        <a href="index.html" class="switch-link">Home<span class="led"></span></a>
+        <a href="televisions.html" class="switch-link">Televisions<span class="led"></span></a>
+        <a href="about.html" class="switch-link active" aria-current="page">About Us<span class="led"></span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section>
+        <span class="eyebrow">About this project</span>
+        <h1>About Us</h1>
+        <p class="lead">This site, ApplianceWatt, is a small demonstration website built for Exercise 0.2 of COS30045 Data Visualisation at Swinburne University. It exists to practise structuring a multi-page site with HTML, styling it consistently with CSS, and adding interactivity with vanilla JavaScript, ahead of the D3.js data visualisation work later in the unit.</p>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">01</span>
+          <h2>What this site covers</h2>
+        </div>
+        <div class="panel">
+          <ul class="list-plain">
+            <li>A three-page structure — Home, Televisions, and this About Us page — sharing one consistent navigation and footer.</li>
+            <li>An FAQ accordion on the Home page, built with vanilla JavaScript and no external libraries.</li>
+            <li>An interactive appliance energy calculator on the Televisions page, covering event handling, DOM reading and writing, and input validation.</li>
+            <li>A single external stylesheet applied consistently across every page, styled around the provided power logo.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">02</span>
+          <h2>Generative AI use</h2>
+        </div>
+        <p>Generative AI (Claude) was used while building this site to help draft the initial HTML/CSS/JS structure and the calculator logic. The code was then reviewed, tested, and adjusted while building it out. A full, detailed reflection on what was generated, what was changed, and what was learned is kept in this repository's <code>README.md</code>, as required for this exercise.</p>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">03</span>
+          <h2>Author</h2>
+        </div>
+        <p>Built by [Yati Moe] for COS30045, Swinburne University of Technology.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> [Yati Moe]. Built for COS30045 Exercise 0.2.</p>
+      <p class="genai-note">Generative AI (Claude) was used to help draft and structure parts of this website's code. See README.md for the full reflection.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

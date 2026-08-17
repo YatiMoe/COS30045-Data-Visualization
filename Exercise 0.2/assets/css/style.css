@@ -1,0 +1,553 @@
+/* =========================================================
+   Appliance Energy Consumption Website
+   Visual identity: household circuit-breaker panel / power meter
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root {
+  /* Colour tokens */
+  --bg-ink: #0E1420;
+  --bg-panel: #161D2E;
+  --bg-panel-raised: #1D2740;
+  --line: #2A3550;
+  --accent-amber: #FFC63A;
+  --accent-amber-dim: #A8842A;
+  --accent-teal: #3ED6C6;
+  --text-primary: #F2F4F8;
+  --text-muted: #93A0B8;
+  --danger: #FF6B57;
+
+  /* Type tokens */
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Layout tokens */
+  --max-width: 1080px;
+  --radius: 10px;
+  --nav-height: 72px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg-ink);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(62, 214, 198, 0.06), transparent 40%),
+    radial-gradient(circle at 85% 10%, rgba(255, 198, 58, 0.06), transparent 40%);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5em 0;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+h3 { font-size: 1.15rem; }
+
+p { color: var(--text-muted); margin: 0 0 1em 0; }
+
+a { color: var(--accent-teal); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent-amber);
+  color: var(--bg-ink);
+  padding: 10px 16px;
+  border-radius: 0 0 6px 0;
+  font-weight: 600;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* Visible focus ring everywhere */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-teal);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   Top navigation — "breaker panel" strip
+   ========================================================= */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(14, 20, 32, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: var(--nav-height);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+.brand-name {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.switch-nav {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.switch-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 9px 16px;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.switch-link .led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.switch-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-panel-raised);
+}
+
+.switch-link.active {
+  color: var(--bg-ink);
+  background: var(--accent-amber);
+  font-weight: 600;
+}
+
+.switch-link.active .led {
+  background: var(--bg-ink);
+  box-shadow: 0 0 6px 1px rgba(14, 20, 32, 0.6);
+}
+
+/* =========================================================
+   Hero + power meter (signature element)
+   ========================================================= */
+
+.hero {
+  padding: 72px 0 56px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.hero p.lead {
+  font-size: 1.08rem;
+  max-width: 46ch;
+}
+
+.meter-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.meter-dial {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
+.meter-needle {
+  transform-origin: 140px 150px;
+  animation: sweep 2.6s cubic-bezier(0.65, 0, 0.35, 1) 0.2s both;
+}
+
+@keyframes sweep {
+  from { transform: rotate(-58deg); }
+  to   { transform: rotate(38deg); }
+}
+
+.meter-reading {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  fill: var(--accent-amber);
+}
+
+.meter-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  fill: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meter-needle { animation: none; transform: rotate(20deg); }
+  html { scroll-behavior: auto; }
+}
+
+/* =========================================================
+   Sections / panels
+   ========================================================= */
+
+section { padding: 40px 0; }
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-head .tick {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-amber);
+  border: 1px solid var(--accent-amber-dim);
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.stat-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: left;
+}
+
+.stat-card .figure {
+  font-family: var(--font-mono);
+  font-size: 1.7rem;
+  color: var(--accent-teal);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-card .figure sup {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.stat-card .caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.note-flag {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* =========================================================
+   FAQ accordion
+   ========================================================= */
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-item:first-child { border-top: 1px solid var(--line); }
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 18px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.faq-question .plus {
+  font-family: var(--font-mono);
+  color: var(--accent-amber);
+  font-size: 1.2rem;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.faq-question[aria-expanded="true"] .plus {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  padding: 0 4px 18px 4px;
+  margin: 0;
+}
+
+/* =========================================================
+   Television cards
+   ========================================================= */
+
+.tv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.tv-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.tv-card h3 {
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.tv-card .watt {
+  font-family: var(--font-mono);
+  color: var(--accent-amber);
+  font-size: 1.1rem;
+}
+
+.tv-card p { margin-bottom: 0; font-size: 0.88rem; }
+
+/* =========================================================
+   Calculator
+   ========================================================= */
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+@media (max-width: 780px) {
+  .calc-grid { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: 1fr; }
+}
+
+.field { margin-bottom: 18px; }
+
+.field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  background: var(--bg-ink);
+  border: 1px solid var(--line);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 11px 12px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--accent-teal);
+}
+
+.field .error {
+  color: var(--danger);
+  font-size: 0.8rem;
+  margin-top: 6px;
+  display: none;
+}
+
+.field.invalid input,
+.field.invalid select {
+  border-color: var(--danger);
+}
+
+.field.invalid .error {
+  display: block;
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  background: var(--accent-amber);
+  color: var(--bg-ink);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 13px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.btn:hover { background: #ffd35c; }
+.btn:active { transform: translateY(1px); }
+
+.results-panel {
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.results-panel h3 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.result-row:last-child { border-bottom: none; }
+
+.result-row .r-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.result-row .r-value {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: var(--accent-teal);
+}
+
+.results-empty {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 28px 0 40px;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.footer-inner p { margin: 0 0 4px 0; color: var(--text-muted); font-size: inherit; }
+
+.genai-note {
+  font-style: italic;
+}
+
+/* =========================================================
+   Utility
+   ========================================================= */
+
+.mt-lg { margin-top: 32px; }
+.list-plain { padding-left: 20px; color: var(--text-muted); }
+.list-plain li { margin-bottom: 8px; }
