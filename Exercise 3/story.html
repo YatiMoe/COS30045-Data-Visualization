@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Story | Appliance Energy Consumption</title>
+  <meta name="description" content="What Australia's TV energy register reveals about screen size, panel technology, and running cost.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topnav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Appliance Energy Consumption — Home">
+        <img src="assets/img/PowerIcon.png" alt="Power logo" class="brand-logo"
+             onerror="this.onerror=null;this.src='assets/img/logo-fallback.svg';">
+        <span class="brand-name">ApplianceWatt</span>
+      </a>
+      <nav class="switch-nav" aria-label="Primary">
+        <a href="index.html" class="switch-link">Home<span class="led"></span></a>
+        <a href="televisions.html" class="switch-link">Televisions<span class="led"></span></a>
+        <a href="story.html" class="switch-link active" aria-current="page">Data Story<span class="led"></span></a>
+        <a href="about.html" class="switch-link">About Us<span class="led"></span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+
+      <!-- ============ HERO ============ -->
+      <section>
+        <span class="eyebrow">Data story · Australian TV energy register</span>
+        <h1>Bigger screen, bigger bill.</h1>
+        <p class="lead">Before you buy, it helps to know what you're signing up for. We pulled 4,724 television models
+          currently registered for sale in Australia and asked three questions a shopper standing in front of a wall
+          of TVs would actually want answered: how common is the size you're eyeing, how much more does a bigger
+          screen cost to run, and does the panel technology change that story?</p>
+
+        <div class="big-idea">
+          <span class="kicker">The big idea</span>
+          <p>Screen size — not brand, not panel technology — is what really drives a television's running cost, and
+            stepping up just one size bracket can add well over $100 a year to the power bill.</p>
+        </div>
+      </section>
+
+      <!-- ============ WHO / STORYBOARD ============ -->
+      <section>
+        <div class="section-head">
+          <span class="tick">01</span>
+          <h2>Who this is for</h2>
+        </div>
+        <p>This page is written for the same audience as the rest of ApplianceWatt: someone in Australia weighing up
+          a new television, who cares less about spec sheets and more about "what will this actually cost me to
+          run?" They don't need the full regulatory dataset — they need three clear answers and a decision they can
+          act on in the shop.</p>
+
+        <div class="storyboard-strip" aria-label="Story outline">
+          <div class="story-note">
+            <span class="num">SETTING</span>
+            <p>Shoppers pick a TV mostly on size and picture, rarely on running cost.</p>
+          </div>
+          <div class="story-note">
+            <span class="num">Q1</span>
+            <p>Which sizes actually dominate the market right now?</p>
+          </div>
+          <div class="story-note">
+            <span class="num">Q2</span>
+            <p>How much more energy does stepping up a size bracket really use?</p>
+          </div>
+          <div class="story-note">
+            <span class="num">Q3</span>
+            <p>Does LCD, LED‑LCD or OLED change the running cost story?</p>
+          </div>
+          <div class="story-note">
+            <span class="num">TWIST</span>
+            <p>Panel technology matters far less than screen size does.</p>
+          </div>
+          <div class="story-note">
+            <span class="num">CALL TO ACTION</span>
+            <p>Match the screen to the room, then check the running cost with our calculator.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Q1 ============ -->
+      <section>
+        <div class="section-head">
+          <span class="tick">02</span>
+          <h2>How common is each screen size?</h2>
+        </div>
+        <p>Across the 4,724 models registered for sale, the market clusters firmly around the middle. The
+          <strong>43&Prime;&ndash;54&Prime;</strong> bracket alone accounts for just over a quarter of every model on
+          the register, more than double the share of anything under 32&Prime;.</p>
+
+        <div class="chart-panel">
+          <h3>Registered TV models by screen size</h3>
+          <p class="chart-caption">Count of registered models per size bracket, converted from the register's
+            diagonal measurement in centimetres to inches.</p>
+          <div class="chart-canvas-wrap">
+            <canvas id="sizeChart" role="img" aria-label="Bar chart of TV model counts by screen size bracket"></canvas>
+          </div>
+        </div>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="figure">26<sup>%</sup></span>
+            <p class="caption">Share of all registered models sitting in the 43&Prime;&ndash;54&Prime; bracket — the single most common size.</p>
+          </div>
+          <div class="stat-card">
+            <span class="figure">4,724</span>
+            <p class="caption">Television models on the Australian energy register included in this analysis.</p>
+          </div>
+          <div class="stat-card">
+            <span class="figure">1<sup>in 7</sup></span>
+            <p class="caption">Roughly the share of models at 75&Prime; or larger — the "statement" end of the market.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ Q2 ============ -->
+      <section>
+        <div class="section-head">
+          <span class="tick">03</span>
+          <h2>Does a bigger screen really use more power?</h2>
+        </div>
+        <p>Yes — and the climb is steep, not gentle. Average labelled annual energy use rises from around
+          104&nbsp;kWh for the smallest sets to 879&nbsp;kWh for 75&Prime;+ models, an increase that tracks screen
+          size closely (screen size and annual energy use move together with a correlation of 0.86 out of 1.0).</p>
+
+        <div class="chart-panel">
+          <h3>Average annual energy use by screen size</h3>
+          <p class="chart-caption">Mean labelled energy consumption (kWh/year) per size bracket.</p>
+          <div class="chart-canvas-wrap">
+            <canvas id="energyChart" role="img" aria-label="Bar chart of average annual kWh by screen size bracket"></canvas>
+          </div>
+        </div>
+
+        <div class="insight-callout">
+          <span class="label">What this means</span>
+          <p>Moving from the most popular bracket (43&Prime;&ndash;54&Prime;, ~337 kWh/year) up to a 75&Prime;+ set
+            (~879 kWh/year) roughly <strong>2.6&times;</strong>'s the annual energy bill for that appliance — at
+            $0.30/kWh, that's the difference between roughly $101 and $264 a year, before the TV has done anything
+            more than sit on the wall.</p>
+        </div>
+      </section>
+
+      <!-- ============ Q3 ============ -->
+      <section>
+        <div class="section-head">
+          <span class="tick">04</span>
+          <h2>Does panel technology change the story?</h2>
+        </div>
+        <p>Not as much as you'd expect. OLEDs do use more power on average than LED-LCDs, which use more than
+          plain LCDs — but almost all of that gap disappears once screen size is accounted for.</p>
+
+        <div class="chart-grid-2">
+          <div class="chart-panel">
+            <h3>Raw average, by panel type</h3>
+            <p class="chart-caption">Average annual kWh per model, unadjusted for size.</p>
+            <div class="chart-canvas-wrap short">
+              <canvas id="techRawChart" role="img" aria-label="Bar chart of average annual kWh by screen technology"></canvas>
+            </div>
+          </div>
+          <div class="chart-panel">
+            <h3>Adjusted for screen size</h3>
+            <p class="chart-caption">Average kWh per year, per inch of screen — a fairer comparison.</p>
+            <div class="chart-canvas-wrap short">
+              <canvas id="techPerInchChart" role="img" aria-label="Bar chart of kWh per inch by screen technology"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-callout">
+          <span class="label">The twist</span>
+          <p>OLEDs look like the biggest power users in the raw chart (486 kWh/year on average) — but that's mostly
+            because OLED models registered for sale skew larger (64.5&Prime; on average, versus 50.7&Prime; for
+            plain LCD). Once normalised per inch of screen, OLED (7.5 kWh/inch) and LED-LCD (7.7 kWh/inch) land in
+            the same range, with older plain LCD panels actually the most efficient per inch (6.6 kWh/inch). Panel
+            technology is a minor factor here — <strong>screen size is doing almost all of the work.</strong></p>
+        </div>
+      </section>
+
+      <!-- ============ RECOMMENDATION ============ -->
+      <section>
+        <div class="section-head">
+          <span class="tick">05</span>
+          <h2>Before you buy</h2>
+        </div>
+        <p>None of this means "buy the smallest TV you can find" — it means going in with your eyes open about what
+          size actually costs to run, so the decision matches your room and your power bill, not just the display
+          wall in-store.</p>
+
+        <ul class="checklist">
+          <li><span class="mark">1</span>Measure your room and viewing distance before you shop — most buyers can comfortably size down from what looks impressive in a showroom.</li>
+          <li><span class="mark">2</span>Treat panel technology (LCD vs LED-LCD vs OLED) as a picture-quality decision, not an energy decision — the running-cost difference between panels is small once size is equal.</li>
+          <li><span class="mark">3</span>Every size bracket up the scale adds real, ongoing cost — budget for the power bill, not just the sticker price.</li>
+          <li><span class="mark">4</span>Use the energy calculator on the Televisions page to estimate the actual yearly cost for the exact model and usage pattern you're considering.</li>
+        </ul>
+
+        <p class="mt-lg"><a class="btn" href="televisions.html">Try the energy calculator →</a></p>
+        <p class="source-note mt-lg">Source: Australian Government Energy Rating regulatory register, extract of 4,724 models sold in Australia, dated 15 Feb 2026. See About Us → README for full data notes.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> [Yati Moe]. Built for COS30045 Exercise 3.</p>
+      <p class="genai-note">Generative AI (Claude) was used to help draft and structure parts of this website's code and this data story. See README.md for the full reflection and AI declaration.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/story-charts.js"></script>
+</body>
+</html>
