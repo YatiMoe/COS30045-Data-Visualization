@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0 20px 60px;
+    color: #222;
+}
+
+.svg-frame {
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+}
+
+.svg-frame svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.before-after {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.before-after figure {
+    flex: 1 1 300px;
+    max-width: 400px;
+    margin: 0;
+    text-align: center;
+}
+
+.before-after img {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+table.changes {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+table.changes th,
+table.changes td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.changes th {
+    background: #f0f0f0;
+}
+
+.annotated img {
+    max-width: 700px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+
+/* Both windows share this class so identical styling (fill, stroke)
+   is applied via one rule, even though each window is a separate
+   <g> positioned with its own transform/translate. */
+.window rect {
+    fill: #bfe0ee;
+    stroke: #274b5e;
+    stroke-width: 4;
+}
+
+.window line {
+    stroke: #274b5e;
+    stroke-width: 3;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Customised house</title>
+<style>
+  body { margin: 0; background: #fff; }
+  svg { display: block; }
+  .window rect { fill: #bfe0ee; stroke: #274b5e; stroke-width: 4; }
+  .window line { stroke: #274b5e; stroke-width: 3; }
+</style>
+</head>
+<body>
+<!-- Step 3-4: recoloured roof/house body, added stroke to shapes that
+     had none, and rebuilt the two windows as grouped <g> elements
+     positioned with transform="translate(x,y)" and styled identically
+     via the shared .window CSS rule. -->
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <rect id="sky" x="0" y="0" width="1000" height="620" fill="#87CEEB" />
+  <rect id="ground" x="0" y="620" width="1000" height="380" fill="#2e8b32" />
+
+  <circle id="sun" cx="820" cy="170" r="75" fill="#ffd400" />
+
+  <rect id="trunk" x="140" y="560" width="34" height="160" fill="#7a4a20" />
+  <ellipse id="canopy" cx="157" cy="500" rx="90" ry="80" fill="#2f7d32" />
+
+  <polygon id="roof" points="500,220 280,440 720,440" fill="#a33d29" stroke="#5e2013" stroke-width="4" />
+
+  <rect id="house-body" x="280" y="440" width="440" height="300" fill="#4a6fa5" stroke="#28405e" stroke-width="4" />
+
+  <!-- Windows: two identical <g> groups, each moved into place with
+       transform="translate(x,y)". Styling comes from one shared CSS
+       rule (.window) so both windows always look the same. -->
+  <g class="window" transform="translate(330,490)">
+    <rect width="90" height="90" />
+    <line x1="45" y1="0" x2="45" y2="90" />
+  </g>
+  <g class="window" transform="translate(580,490)">
+    <rect width="90" height="90" />
+    <line x1="45" y1="0" x2="45" y2="90" />
+  </g>
+
+  <rect id="door" x="455" y="590" width="110" height="150" fill="#5c3a1e" />
+  <circle id="doorknob" cx="548" cy="668" r="6" fill="#1a1a1a" />
+
+  <path id="garden-path" d="M500,740 C 430,800 620,850 500,920 S 380,1000 500,1000"
+        fill="none" stroke="#e8a33d" stroke-width="28" />
+
+  <text x="760" y="600" font-family="Verdana, sans-serif" font-size="42" fill="#1a1a1a">House</text>
+</svg>
+</body>
+</html>

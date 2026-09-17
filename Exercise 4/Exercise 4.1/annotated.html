@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Annotated coordinates - house SVG</title>
+<style>
+  body { margin: 0; background: #fff; }
+  svg { display: block; }
+  .callout-label { font-family: "Courier New", monospace; font-size: 20px; fill: #08306b; }
+  .callout-bg { fill: #ffffff; fill-opacity: 0.85; }
+  .guide { stroke: #1f6fd6; stroke-width: 2; stroke-dasharray: 8 6; }
+  .point { fill: #1f6fd6; }
+  .window rect { fill: #bfe0ee; stroke: #274b5e; stroke-width: 4; }
+  .window line { stroke: #274b5e; stroke-width: 3; }
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Same house as v2-customised.html -->
+  <rect id="sky" x="0" y="0" width="1000" height="620" fill="#87CEEB" />
+  <rect id="ground" x="0" y="620" width="1000" height="380" fill="#2e8b32" />
+  <circle id="sun" cx="820" cy="170" r="75" fill="#ffd400" />
+  <rect id="trunk" x="140" y="560" width="34" height="160" fill="#7a4a20" />
+  <ellipse id="canopy" cx="157" cy="500" rx="90" ry="80" fill="#2f7d32" />
+  <polygon id="roof" points="500,220 280,440 720,440" fill="#a33d29" stroke="#5e2013" stroke-width="4" />
+  <rect id="house-body" x="280" y="440" width="440" height="300" fill="#4a6fa5" stroke="#28405e" stroke-width="4" />
+  <g class="window" transform="translate(330,490)">
+    <rect width="90" height="90" />
+    <line x1="45" y1="0" x2="45" y2="90" />
+  </g>
+  <g class="window" transform="translate(580,490)">
+    <rect width="90" height="90" />
+    <line x1="45" y1="0" x2="45" y2="90" />
+  </g>
+  <rect id="door" x="455" y="590" width="110" height="150" fill="#5c3a1e" />
+  <circle id="doorknob" cx="548" cy="668" r="6" fill="#1a1a1a" />
+  <path id="garden-path" d="M500,740 C 430,800 620,850 500,920 S 380,1000 500,1000"
+        fill="none" stroke="#e8a33d" stroke-width="28" />
+  <text x="760" y="600" font-family="Verdana, sans-serif" font-size="42" fill="#1a1a1a">House</text>
+
+  <!-- Annotation overlay: coordinates for 3 sample shapes -->
+  <g id="annotations">
+    <circle class="point" cx="0" cy="0" r="6" />
+    <rect class="callout-bg" x="4" y="6" width="90" height="24" />
+    <text class="callout-label" x="6" y="24" font-size="16">origin (0,0)</text>
+
+    <!-- house body rect -->
+    <line class="guide" x1="0" y1="440" x2="280" y2="440" />
+    <line class="guide" x1="280" y1="0" x2="280" y2="440" />
+    <circle class="point" cx="280" cy="440" r="7" />
+    <rect class="callout-bg" x="286" y="404" width="300" height="66" />
+    <text class="callout-label" x="292" y="426">rect x=280 y=440</text>
+    <text class="callout-label" x="292" y="450">width=440 height=300</text>
+
+    <!-- sun circle -->
+    <line class="guide" x1="0" y1="170" x2="820" y2="170" />
+    <line class="guide" x1="820" y1="0" x2="820" y2="170" />
+    <circle class="point" cx="820" cy="170" r="7" />
+    <rect class="callout-bg" x="560" y="40" width="250" height="46" />
+    <text class="callout-label" x="566" y="62">circle cx=820 cy=170</text>
+    <text class="callout-label" x="566" y="82">r=75</text>
+
+    <!-- window group translate -->
+    <line class="guide" x1="0" y1="490" x2="330" y2="490" />
+    <line class="guide" x1="330" y1="0" x2="330" y2="490" />
+    <circle class="point" cx="330" cy="490" r="7" />
+    <rect class="callout-bg" x="20" y="330" width="290" height="30" />
+    <text class="callout-label" x="26" y="352">g transform=translate(330,490)</text>
+  </g>
+</svg>
+</body>
+</html>
