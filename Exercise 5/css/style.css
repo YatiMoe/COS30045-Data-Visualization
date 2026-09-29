@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* keeps the D3-generated svg responsive and centred */
+.responsive-svg-container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Exercise 5.1: bar chart styling */
+.bar {
+    fill: green;
+}
+
+.bar-label {
+    font-size: 14px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+.axis-label {
+    font-size: 14px;
+}
+
+.x-axis text,
+.y-axis text {
+    font-size: 13px;
+}
+
+/* hide the tick lines under the category axis, keep the axis line itself */
+.x-axis .tick line {
+    display: none;
+}
+
+/* Exercise 5.2: scatter plot / line chart styling */
+.price-line {
+    fill: none;
+    stroke: green;
+    stroke-width: 2;
+}
+
+.price-point {
+    fill: green;
+}
+
+/* Exercise 5.3: donut chart styling */
+.donut-arc {
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.donut-label {
+    font-size: 13px;
+}
