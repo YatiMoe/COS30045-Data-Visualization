@@ -1,4 +1,5 @@
-/* Exercise 5.1 - Vertical bar chart with axis */
+/* Exercise 5.1 - Vertical bar chart with axis
+   (restyled to the ApplianceWatt theme via assets/css/style.css) */
 
 const drawBarChart = data => {
 
@@ -80,20 +81,16 @@ const drawBarChart = data => {
 
 };
 
-d3.csv("data/screenTechEnergy55in.csv", d => {
+d3.csv("assets/data/screenTechEnergy55in.csv", d => {
     return {
         Screen_Tech: d.Screen_Tech.toUpperCase(),
         Energy_Consumption: +d.Energy_Consumption
     };
 }).then(data => {
     console.log(data);
-    console.log(data.length);
-    console.log(d3.max(data, d => d.Energy_Consumption));
-    console.log(d3.min(data, d => d.Energy_Consumption));
 
     // sort screen types from highest to lowest energy consumption
     data.sort((a, b) => b.Energy_Consumption - a.Energy_Consumption);
-    console.log(data);
 
     drawBarChart(data);
 });

@@ -1,8 +1,9 @@
-/* Exercise 5.2 - Scatter plot and line chart */
+/* Exercise 5.2 - Scatter plot and line chart
+   (restyled to the ApplianceWatt theme via assets/css/style.css) */
 
 const drawLineChart = data => {
 
-    // reuse the Exercise 5.1 margins/size so both charts line up the same width
+    // reuse the bar chart's margins/size so both charts line up the same width
     const margin = { top: 60, right: 40, bottom: 50, left: 60 };
     const width = 700;
     const height = 500;
@@ -87,17 +88,13 @@ const drawLineChart = data => {
 };
 
 // Column names must match the CSV header exactly, including capitalisation
-d3.csv("data/ARE_Spot_Prices.csv", d => {
+d3.csv("assets/data/ARE_Spot_Prices.csv", d => {
     return {
         year: +d.Year,
         averagePrice: +d["Average Price (notTas-Snowy)"]
     };
 }).then(data => {
     console.log(data);
-    console.log(data.length);
-    console.log(d3.max(data, d => d.averagePrice));
-    console.log(d3.min(data, d => d.averagePrice));
-    console.log(d3.extent(data, d => d.year));
 
     drawLineChart(data);
 });

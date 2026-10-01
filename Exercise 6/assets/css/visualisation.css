@@ -1,0 +1,79 @@
+/* =========================================================
+   Exercise 6 — visualisation.css
+   Styles shared by both D3 charts (histogram + scatterplot).
+   Base page styles stay in style.css.
+   ========================================================= */
+
+.responsive-svg-container {
+  width: 100%;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+.responsive-svg-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Axes */
+.axis path,
+.axis line {
+  stroke: var(--line);
+}
+
+.axis text {
+  fill: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.axis-label {
+  fill: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+}
+
+/* Legend */
+.legend-label {
+  fill: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* Tooltip (SVG) */
+.tooltip text {
+  fill: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+}
+
+.tooltip .tooltip-size {
+  font-weight: 600;
+  fill: var(--accent-amber);
+}
+
+.chart-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 10px 0 0;
+}
+
+.chart-error {
+  color: var(--danger);
+  padding: 16px;
+}
+
+.hero-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+  margin-bottom: 14px;
+}

@@ -1,4 +1,5 @@
-/* Exercise 5.3 - Donut chart */
+/* Exercise 5.3 - Donut chart
+   (restyled to the ApplianceWatt theme via assets/css/style.css) */
 
 const drawDonutChart = data => {
 
@@ -8,10 +9,11 @@ const drawDonutChart = data => {
     const height = 500;
     const radius = Math.min(width, height) / 2 - 20; // leave some padding
 
-    // colour scale - one colour per screen size category
+    // colour scale - one colour per screen size category, using the site's
+    // own accent palette (teal / amber) plus a muted slate for the third
     const color = d3.scaleOrdinal()
         .domain(data.map(d => d.Screensize_Category))
-        .range(d3.schemeSet2);
+        .range(["#3ED6C6", "#FFC63A", "#93A0B8"]);
 
     // calculate the angle for each slice using d3.pie
     // sort is disabled so the slices keep the category order from the csv
@@ -56,7 +58,7 @@ const drawDonutChart = data => {
 };
 
 // no sort here - the pie() call above keeps the categories in csv order
-d3.csv("data/screensizeCategoryCount.csv", d => {
+d3.csv("assets/data/screensizeCategoryCount.csv", d => {
     return {
         Screensize_Category: d.Screensize_Category,
         Count: +d.Count
