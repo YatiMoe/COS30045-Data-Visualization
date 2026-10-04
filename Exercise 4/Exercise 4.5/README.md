@@ -1,64 +1,24 @@
-# COS30045 – Data Visualisation  
-## Exercise 0.2 – Energy Website
+# Exercise 4.5 – D3 binding and drawing with data
 
-Welcome to **Exercise 0.2** for COS30045 Data Visualisation.
+Binds the brand data to one `<rect>` per brand with `.selectAll().data().join()`, drawing bars from raw pixel values.
 
-In this exercise, you will build a simple **Energy Data Webpage** using **HTML, CSS, and JavaScript**. The purpose of this exercise is to familiarise you with the development workflow using **GitHub and VS Code**, while preparing the foundation for future data visualisation tasks.
+The folder is the ApplianceWatt website with **Exercise 4.1** and **Exercise 4.3-4.5** in the navigation. It shows only the answers up to this exercise.
 
----
+## Files
+- `index.html`, `televisions.html`, `about.html` – the ApplianceWatt website pages (Exercise 0.2 site)
+- `exercise4-1.html` – the Exercise 4.1 answer (SVG house)
+- `exercise4-5.html` – the Exercise 4.3-4.5 answer. Steps 1–3, stacked: set-up, loaded data, then the first (unscaled) bars.
+- `assets/css/style.css` – site styling
+- `assets/js/main.js` – site navigation script
+- `assets/js/chart-stages.js` – draws the step-by-step charts shown on the page
+- `assets/data/tvBrandCount.csv` – data used by the page
+- `data/tvBrandCount.csv`, `css/style.css`, `js/main.js` – the original exercise files (`drawBarChart` in `js/main.js`)
 
-# Objective
+## AI declaration
+Generative AI (Claude, Anthropic) was used to help draft the code following the exercise brief. The code was tested locally and reviewed before committing.
 
-The objectives of this exercise are:
+## Reference
+Dufour, D., & Meeks, T. (2024). *D3.js in Action* (3rd ed.). Manning.
 
-- Understand how to use **GitHub for version control**
-- Practice **web development structure**
-- Build a **basic website**
-- Maintain **regular commits**
-- Identify commits that include **GenAI-generated code**
-
----
-
-# Step 1 – Fork the Repository
-
-1. Open this repository.
-2. Click **Fork** at the top right of the page.
-3. This will create a copy of the repository in your GitHub account.
-
-Example:
-
-Original repository : "github.com/rishmaf/COS30045-Data-Visualization/energy-webpage"
-
-Your forked repository : "github.com/yourusername/COS30045-Data-Visualization/energy-webpage"
-
-
----
-
-# Step 2 – Clone the Repository
-
-Clone your forked repository to your local machine using **VS Code** or the terminal.
-
-
-
-# Step 3 – Project Structure
-
-
-Your project must follow the structure below.
-
-```bash
-energy-webpage-v1
-│
-├── css
-│   └── styles.css
-│
-├── js
-│   └── scripts.js
-│
-├── images
-│   └── PowerIcon.png
-│
-├── data
-│   └── data.csv
-│
-├── index.html
-└── README.md
+## Live Link
+https://mercury.swin.edu.au/cos30045/s105972489/Exercise%204/Exercise%204.5/

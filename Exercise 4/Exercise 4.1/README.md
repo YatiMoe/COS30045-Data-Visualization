@@ -2,13 +2,15 @@
 
 A house and garden built with SVG shapes (rect, circle, ellipse, polygon, path, line, text) and one `<g>`/`transform` group, for COS30045 Data Visualisation.
 
+The folder is the ApplianceWatt website with an **Exercise 4.1** page in the navigation. It shows only this exercise's answer.
+
 ## Files
-- `index.html` – the finished page: the SVG picture, before/after comparison, coordinate annotation, and AI declaration
-- `v1-initial.html` – Step 1, the plain first version of the house (before customisation)
-- `v2-customised.html` – Step 3–4, after recolouring the roof/house body and grouping the windows
-- `annotated.html` – the coordinate-annotated version used to generate the annotated screenshot
-- `assets/css/style.css` – page styling, including the shared `.window` rule for both window groups
+- `index.html`, `televisions.html`, `about.html` – the ApplianceWatt website pages (Exercise 0.2 site)
+- `exercise4-1.html` – the Exercise 4.1 answer: the SVG picture, a before/after comparison table, the coordinate annotation, and the AI declaration
+- `assets/css/style.css` – site styling, including the shared `.window` rule for both window groups
+- `assets/js/main.js` – site navigation script
 - `assets/img/house-initial.png`, `house-customised.png`, `house-annotated.png` – screenshots used on the page
+- `assets/img/PowerIcon.png` – site logo
 
 ## What changed (Step 3–4)
 - Roof: recoloured, added a stroke
