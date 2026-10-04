@@ -1,18 +1,64 @@
-# Exercise 4.6 – Scaling charts
+# COS30045 – Data Visualisation  
+## Exercise 0.2 – Energy Website
 
-Replaces raw pixel values with D3 scales so the bar chart fits the SVG regardless of the data's range or the number of categories.
+Welcome to **Exercise 0.2** for COS30045 Data Visualisation.
 
-## Files
-- `index.html` – same responsive SVG container, viewBox narrowed to `0 0 500 600` to force the chart to need scaling
-- `css/style.css` – unchanged from Exercise 4.3
-- `js/main.js` – adds an `xScale` (`d3.scaleLinear`, domain `[0, 1200]` → range `[0, 400]`) for bar width, and a `yScale` (`d3.scaleBand`, domain = brand names → range `[0, 600]`, with padding) for bar height/position; `barHeight`/`barSpacing` are no longer needed and were removed
-- `data/tvBrandCount.csv` – same dataset as Exercise 4.4
+In this exercise, you will build a simple **Energy Data Webpage** using **HTML, CSS, and JavaScript**. The purpose of this exercise is to familiarise you with the development workflow using **GitHub and VS Code**, while preparing the foundation for future data visualisation tasks.
 
-## AI declaration
-Generative AI (Claude, Anthropic) was used to help draft the scaling code following the exercise brief. The code was tested locally and reviewed before committing.
+---
 
-## Reference
-Dufour, D., & Meeks, T. (2024). *D3.js in Action* (3rd ed.). Manning.
+# Objective
 
-## Live Link
-https://mercury.swin.edu.au/cos30045/s105972489/Exercise%204/Exercise%204.6/
+The objectives of this exercise are:
+
+- Understand how to use **GitHub for version control**
+- Practice **web development structure**
+- Build a **basic website**
+- Maintain **regular commits**
+- Identify commits that include **GenAI-generated code**
+
+---
+
+# Step 1 – Fork the Repository
+
+1. Open this repository.
+2. Click **Fork** at the top right of the page.
+3. This will create a copy of the repository in your GitHub account.
+
+Example:
+
+Original repository : "github.com/rishmaf/COS30045-Data-Visualization/energy-webpage"
+
+Your forked repository : "github.com/yourusername/COS30045-Data-Visualization/energy-webpage"
+
+
+---
+
+# Step 2 – Clone the Repository
+
+Clone your forked repository to your local machine using **VS Code** or the terminal.
+
+
+
+# Step 3 – Project Structure
+
+
+Your project must follow the structure below.
+
+```bash
+energy-webpage-v1
+│
+├── css
+│   └── styles.css
+│
+├── js
+│   └── scripts.js
+│
+├── images
+│   └── PowerIcon.png
+│
+├── data
+│   └── data.csv
+│
+├── index.html
+└── README.md

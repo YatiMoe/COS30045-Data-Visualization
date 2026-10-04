@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 4.3-4.7 | Appliance Energy Consumption</title>
+  <meta name="description" content="COS30045 Exercise 4.3-4.7-4.7 - step-by-step D3 bar chart build.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topnav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Appliance Energy Consumption — Home">
+        <img src="assets/img/PowerIcon.png" alt="Power logo" class="brand-logo"
+             onerror="this.onerror=null;this.src='assets/img/logo-fallback.svg';">
+        <span class="brand-name">ApplianceWatt</span>
+      </a>
+      <nav class="switch-nav" aria-label="Primary">
+        <a href="index.html" class="switch-link">Home<span class="led"></span></a>
+        <a href="televisions.html" class="switch-link">Televisions<span class="led"></span></a>
+        <a href="about.html" class="switch-link">About Us<span class="led"></span></a>
+        <a href="exercise4-1.html" class="switch-link">Exercise 4.1<span class="led"></span></a>
+        <a href="exercise4-7.html" class="switch-link active" aria-current="page">Exercise 4.3-4.7<span class="led"></span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section>
+        <span class="eyebrow">COS30045 &middot; Building the bar chart</span>
+        <h1>Exercise 4.3 &ndash; 4.7</h1>
+        <p class="lead">The full step-by-step process of building a D3 bar chart of TV brands, from an empty SVG to a finished, labelled, scaled chart.</p>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">01</span>
+          <h2>D3 set up (Exercise 4.3)</h2>
+        </div>
+        <p>Created the responsive SVG container with D3, and checked it with a hard-coded test rectangle before loading any real data.</p>
+        <div class="panel">
+<div id="stage-43" class="stage-container"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">02</span>
+          <h2>Load data from CSV (Exercise 4.4)</h2>
+        </div>
+        <p>Loaded <code>tvBrandCount.csv</code> with <code>d3.csv</code>, converted <code>count</code> to a number as each row was read, and inspected the data (length, max, min, extent). The exercise itself only logs this to the console &ndash; the table below shows the same loaded, typed data.</p>
+        <div class="panel">
+<div id="stage-44" class="stage-container"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">03</span>
+          <h2>Bind the data and draw bars (Exercise 4.5)</h2>
+        </div>
+        <p>Bound the data to a <code>&lt;rect&gt;</code> per brand with <code>.data(data).join("rect")</code>, using raw pixel values for width and position &ndash; the widest bars already run far past a sensible page width.</p>
+        <div class="panel">
+<div id="stage-45" class="stage-container"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">04</span>
+          <h2>Scale the chart to fit (Exercise 4.6)</h2>
+        </div>
+        <p>Replaced the raw pixel values with a linear scale (<code>xScale</code>) for bar width and a band scale (<code>yScale</code>) for bar height/position, so the chart fits the SVG no matter the data range or the number of brands.</p>
+        <div class="panel">
+<div id="stage-46" class="stage-container"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="tick">05</span>
+          <h2>Add labels (Exercise 4.7)</h2>
+        </div>
+        <p>Grouped each bar with its brand-name and count labels in a <code>&lt;g&gt;</code>, translated by the band scale so the label and bar always move together &ndash; the finished chart.</p>
+        <div class="panel">
+<div id="stage-47" class="stage-container"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> [Yati Moe]. Built for COS30045 Exercise 0.2.</p>
+      <p class="genai-note">Generative AI (Claude) was used to help draft and structure parts of this website's code. See README.md for the full reflection.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="assets/js/chart-stages.js"></script>
+  <script>
+  loadBrandData().then(data => {
+    stage43("#stage-43", data);
+    stage44("#stage-44", data);
+    stage45("#stage-45", data);
+    stage46("#stage-46", data);
+    stage47("#stage-47", data);
+  });
+  </script>
+</body>
+</html>
